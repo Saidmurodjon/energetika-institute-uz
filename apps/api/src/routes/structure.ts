@@ -1,15 +1,13 @@
 import { Hono } from 'hono';
 import { zValidator } from '@hono/zod-validator';
 import { z } from 'zod';
-import { prisma } from '@energetika/db';
 import { requireAuth } from '../middleware/auth';
+import type { AppContext } from '../index';
 
-export const structureRouter = new Hono();
+export const structureRouter = new Hono<AppContext>();
 
 const unitSchema = z.object({
-  nameUz: z.string().min(1),
-  nameEn: z.string().min(1),
-  nameRu: z.string().min(1),
+  nameUz: z.string().min(1), nameEn: z.string().min(1), nameRu: z.string().min(1),
   descriptionUz: z.string().default(''),
   descriptionEn: z.string().default(''),
   descriptionRu: z.string().default(''),
@@ -19,57 +17,45 @@ const unitSchema = z.object({
   parentId: z.string().optional().nullable(),
 });
 
-// Build nested tree from flat list
-function buildTree(units: any[], parentId: string | null = null): any[] {
+function buildTree(units: Record<string, unknown>[], parentId: string | null = null): unknown[] {
   return units
     .filter((u) => u.parentId === parentId)
-    .sort((a, b) => a.order - b.order)
-    .map((u) => ({ ...u, children: buildTree(units, u.id) }));
+    .sort((a, b) => (a.order as number) - (b.order as number))
+    .map((u) => ({ ...u, children: buildTree(units, u.id as string) }));
 }
 
-// Public: get full structure tree
 structureRouter.get('/', async (c) => {
-  const units = await prisma.structureUnit.findMany({
-    orderBy: { order: 'asc' },
-  });
-  const tree = buildTree(units, null);
-  return c.json({ data: tree });
+  const db = c.get('db');
+  const units = await db.structureUnit.findMany({ orderBy: { order: 'asc' } });
+  return c.json({ data: buildTree(units as Record<string, unknown>[], null) });
 });
 
-// Public: get single unit
 structureRouter.get('/:id', async (c) => {
-  const id = c.req.param('id');
-  const unit = await prisma.structureUnit.findUnique({ where: { id } });
+  const db = c.get('db');
+  const unit = await db.structureUnit.findUnique({ where: { id: c.req.param('id') } });
   if (!unit) return c.json({ error: 'Not found' }, 404);
   return c.json({ data: unit });
 });
 
-// Admin: create
 structureRouter.post('/', requireAuth, zValidator('json', unitSchema), async (c) => {
-  const data = c.req.valid('json');
-  const unit = await prisma.structureUnit.create({ data });
+  const db = c.get('db');
+  const unit = await db.structureUnit.create({ data: c.req.valid('json') });
   return c.json({ data: unit }, 201);
 });
 
-// Admin: update
 structureRouter.put('/:id', requireAuth, zValidator('json', unitSchema.partial()), async (c) => {
-  const id = c.req.param('id');
-  const data = c.req.valid('json');
-  const unit = await prisma.structureUnit.update({ where: { id }, data });
+  const db = c.get('db');
+  const unit = await db.structureUnit.update({ where: { id: c.req.param('id') }, data: c.req.valid('json') });
   return c.json({ data: unit });
 });
 
-// Admin: delete
 structureRouter.delete('/:id', requireAuth, async (c) => {
+  const db = c.get('db');
   const id = c.req.param('id');
-  // Move children to parent before deleting
-  const unit = await prisma.structureUnit.findUnique({ where: { id } });
+  const unit = await db.structureUnit.findUnique({ where: { id } });
   if (unit) {
-    await prisma.structureUnit.updateMany({
-      where: { parentId: id },
-      data: { parentId: unit.parentId },
-    });
+    await db.structureUnit.updateMany({ where: { parentId: id }, data: { parentId: unit.parentId } });
   }
-  await prisma.structureUnit.delete({ where: { id } });
+  await db.structureUnit.delete({ where: { id } });
   return c.json({ message: 'Deleted successfully' });
 });
