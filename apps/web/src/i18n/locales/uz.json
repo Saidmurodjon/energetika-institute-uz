@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Institut haqida",
+    "structure": "Institut tuzilmasi",
+    "labs": "Ilmiy laboratoriyalar",
+    "news": "Yangiliklar",
+    "publications": "Nashrlar",
+    "contact": "Aloqa"
+  },
+  "home": {
+    "hero_title": "O'zbekiston Respublikasi Fanlar akademiyasi",
+    "hero_subtitle": "Energetika muammolari instituti",
+    "hero_desc": "Energetika sohasidagi fundamental va amaliy tadqiqotlar, muqobil energiya manbalari va energiya samaradorligini oshirish bo'yicha ilmiy izlanishlar markazi.",
+    "learn_more": "Batafsil",
+    "news_title": "So'nggi yangiliklar",
+    "publications_title": "So'nggi nashrlar",
+    "view_all": "Barchasini ko'rish",
+    "contact_title": "Biz bilan bog'laning",
+    "stats_research": "Ilmiy yo'nalish",
+    "stats_labs": "Laboratoriya",
+    "stats_publications": "Nashr",
+    "stats_years": "Yil tajriba"
+  },
+  "about": {
+    "title": "Institut haqida",
+    "mission": "Missiya",
+    "history": "Tarix",
+    "mission_text": "Institutimiz O'zbekiston Respublikasi energetika muammolarini hal etishga qaratilgan fundamental va amaliy ilmiy tadqiqotlarni amalga oshiradi.",
+    "history_text": "Institut O'zbekiston Fanlar akademiyasi tizimida tashkil etilgan bo'lib, energetika sohasida ko'plab muhim ilmiy yutuqlarga erishgan."
+  },
+  "structure": {
+    "title": "Institut tuzilmasi",
+    "subtitle": "Ilmiy-tashkiliy tuzilma"
+  },
+  "labs": {
+    "title": "Ilmiy laboratoriyalar",
+    "subtitle": "Asosiy tadqiqot yo'nalishlari"
+  },
+  "news": {
+    "title": "Yangiliklar va e'lonlar",
+    "subtitle": "Institut hayotidan",
+    "read_more": "To'liq o'qish",
+    "published": "Chop etilgan",
+    "no_news": "Yangiliklar topilmadi"
+  },
+  "publications": {
+    "title": "Nashrlar",
+    "subtitle": "Ilmiy maqolalar va monografiyalar",
+    "all": "Barchasi",
+    "article": "Maqolalar",
+    "monograph": "Monografiyalar",
+    "conference": "Konferensiya",
+    "patent": "Patentlar",
+    "report": "Hisobotlar",
+    "authors": "Mualliflar",
+    "journal": "Jurnal",
+    "download": "Yuklab olish",
+    "no_pubs": "Nashrlar topilmadi"
+  },
+  "contact": {
+    "title": "Aloqa",
+    "subtitle": "Biz bilan bog'laning",
+    "name": "Ism",
+    "email": "Elektron pochta",
+    "phone": "Telefon",
+    "subject": "Mavzu",
+    "message": "Xabar",
+    "send": "Yuborish",
+    "success": "Xabaringiz muvaffaqiyatli yuborildi!",
+    "address": "Manzil",
+    "working_hours": "Ish vaqti"
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan",
+    "developed": "Sayt ishlab chiqilgan"
+  },
+  "admin": {
+    "login": "Kirish",
+    "logout": "Chiqish",
+    "dashboard": "Boshqaruv paneli",
+    "email": "Email",
+    "password": "Parol",
+    "sign_in": "Tizimga kirish",
+    "news": "Yangiliklar",
+    "publications": "Nashrlar",
+    "structure": "Tuzilma",
+    "settings": "Sozlamalar",
+    "messages": "Xabarlar",
+    "add_new": "Yangi qo'shish",
+    "edit": "Tahrirlash",
+    "delete": "O'chirish",
+    "save": "Saqlash",
+    "cancel": "Bekor qilish",
+    "confirm_delete": "O'chirishni tasdiqlaysizmi?",
+    "title_uz": "Sarlavha (UZ)",
+    "title_en": "Sarlavha (EN)",
+    "title_ru": "Sarlavha (RU)",
+    "content_uz": "Mazmun (UZ)",
+    "content_en": "Mazmun (EN)",
+    "content_ru": "Mazmun (RU)",
+    "total_news": "Jami yangiliklar",
+    "total_pubs": "Jami nashrlar",
+    "total_msgs": "Xabarlar",
+    "unread_msgs": "O'qilmagan"
+  },
+  "common": {
+    "loading": "Yuklanmoqda...",
+    "error": "Xatolik yuz berdi",
+    "not_found": "Topilmadi",
+    "back": "Orqaga",
+    "search": "Qidirish",
+    "language": "Til"
+  }
+}

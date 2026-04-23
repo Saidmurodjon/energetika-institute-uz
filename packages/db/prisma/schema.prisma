@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
+
+model News {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  titleUz     String
+  titleEn     String
+  titleRu     String
+  summaryUz   String
+  summaryEn   String
+  summaryRu   String
+  contentUz   String   @db.Text
+  contentEn   String   @db.Text
+  contentRu   String   @db.Text
+  imageUrl    String?
+  publishedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("news")
+}
+
+model Publication {
+  id        String   @id @default(cuid())
+  titleUz   String
+  titleEn   String
+  titleRu   String
+  authors   String
+  journal   String?
+  year      Int
+  doi       String?
+  fileUrl   String?
+  category  String   @default("article")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("publications")
+}
+
+model StructureUnit {
+  id            String          @id @default(cuid())
+  nameUz        String
+  nameEn        String
+  nameRu        String
+  descriptionUz String          @default("") @db.Text
+  descriptionEn String          @default("") @db.Text
+  descriptionRu String          @default("") @db.Text
+  head          String?
+  type          String          @default("department")
+  order         Int             @default(0)
+  parentId      String?
+  parent        StructureUnit?  @relation("StructureHierarchy", fields: [parentId], references: [id])
+  children      StructureUnit[] @relation("StructureHierarchy")
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+
+  @@map("structure_units")
+}
+
+model SiteSetting {
+  key       String   @id
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt
+
+  @@map("site_settings")
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_messages")
+}

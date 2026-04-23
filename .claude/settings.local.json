@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(winget install *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/Saidmurod/AppData/Local/Microsoft/WinGet/Packages/GitHub.cli_Microsoft.Winget.Source_8wekyb3d8bbwe/gh_2.70.0_windows_amd64\" node --version)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs\")",
+      "Bash(npm install *)",
+      "Bash(npm --version)",
+      "Bash(wrangler --version)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/Saidmurod/AppData/Roaming/npm\")",
+      "Bash(bun --version)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/nodejs:/c/Users/Saidmurod/AppData/Roaming/npm:/c/Program Files/GitHub CLI\")",
+      "Read(//c/Users/Saidmurod/**)",
+      "Read(//c/Users/Saidmurod/.wrangler/config/**)",
+      "Bash(npm run *)"
+    ]
+  }
+}

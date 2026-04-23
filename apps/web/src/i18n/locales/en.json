@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Institute",
+    "structure": "Institute Structure",
+    "labs": "Scientific Laboratories",
+    "news": "News",
+    "publications": "Publications",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero_title": "Academy of Sciences of the Republic of Uzbekistan",
+    "hero_subtitle": "Institute of Energy Problems",
+    "hero_desc": "Center for fundamental and applied research in the energy sector, alternative energy sources and improving energy efficiency.",
+    "learn_more": "Learn More",
+    "news_title": "Latest News",
+    "publications_title": "Recent Publications",
+    "view_all": "View All",
+    "contact_title": "Contact Us",
+    "stats_research": "Research Areas",
+    "stats_labs": "Laboratories",
+    "stats_publications": "Publications",
+    "stats_years": "Years of Experience"
+  },
+  "about": {
+    "title": "About the Institute",
+    "mission": "Mission",
+    "history": "History",
+    "mission_text": "Our institute conducts fundamental and applied scientific research aimed at solving energy problems of the Republic of Uzbekistan.",
+    "history_text": "The institute was established within the Academy of Sciences of Uzbekistan and has achieved many important scientific milestones in the energy sector."
+  },
+  "structure": {
+    "title": "Institute Structure",
+    "subtitle": "Scientific and Organizational Structure"
+  },
+  "labs": {
+    "title": "Scientific Laboratories",
+    "subtitle": "Main Research Directions"
+  },
+  "news": {
+    "title": "News & Announcements",
+    "subtitle": "From Institute Life",
+    "read_more": "Read More",
+    "published": "Published",
+    "no_news": "No news found"
+  },
+  "publications": {
+    "title": "Publications",
+    "subtitle": "Scientific Articles and Monographs",
+    "all": "All",
+    "article": "Articles",
+    "monograph": "Monographs",
+    "conference": "Conference",
+    "patent": "Patents",
+    "report": "Reports",
+    "authors": "Authors",
+    "journal": "Journal",
+    "download": "Download",
+    "no_pubs": "No publications found"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in Touch",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Your message has been sent successfully!",
+    "address": "Address",
+    "working_hours": "Working Hours"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "developed": "Developed by"
+  },
+  "admin": {
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "email": "Email",
+    "password": "Password",
+    "sign_in": "Sign In",
+    "news": "News",
+    "publications": "Publications",
+    "structure": "Structure",
+    "settings": "Settings",
+    "messages": "Messages",
+    "add_new": "Add New",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm_delete": "Confirm delete?",
+    "title_uz": "Title (UZ)",
+    "title_en": "Title (EN)",
+    "title_ru": "Title (RU)",
+    "content_uz": "Content (UZ)",
+    "content_en": "Content (EN)",
+    "content_ru": "Content (RU)",
+    "total_news": "Total News",
+    "total_pubs": "Total Publications",
+    "total_msgs": "Messages",
+    "unread_msgs": "Unread"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "not_found": "Not found",
+    "back": "Back",
+    "search": "Search",
+    "language": "Language"
+  }
+}

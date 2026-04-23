@@ -1,0 +1,12 @@
+name = "energetika-api"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+NODE_ENV = "production"
+
+# Secrets (set via: wrangler secret put SECRET_NAME)
+# DATABASE_URL
+# JWT_SECRET
+# FRONTEND_URL
